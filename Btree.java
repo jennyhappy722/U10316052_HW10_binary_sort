@@ -21,28 +21,28 @@ public class Btree {
 		temp.right = create(arr);
 		return temp;
 	}
-	public void preOrder(Node n){//中->左->右
+	public void preOrder(Node n){//middle->left->right
 		if (n != null) {
 			System.out.print(n.data+" ");
 			preOrder(n.left);
 			preOrder(n.right);
 		}
 	}
-	public void postOrder(Node n) {//左->右->中
+	public void postOrder(Node n) {//left->rirht->middle
 		if (n!=null) {
 			postOrder(n.left);
 			postOrder(n.right);
 			System.out.print(n.data+" ");
 		}
 	}
-	public void inOrder(Node n) {//左->中->右
+	public void inOrder(Node n) {//left->middle->right
 		if (n != null) {
 			inOrder(n.left);
 			System.out.print(n.data+" ");
 			inOrder(n.right);
 		}
 	}
-	public void printAll(Node n) {//樹的節點降冪輸出
+	public void printAll(Node n) {//printall node small~big
 		System.out.print("\nPrintAll: ");
 		Collections.sort(list, new Comparator<Integer>(){//Sort ArrayList
 			@Override 
@@ -54,7 +54,7 @@ public class Btree {
 			System.out.print(list.get(i)+" ");
 		}
 	}
-	public void size() {//樹的大小
+	public void size() {//treesize
 		System.out.print("\nSize: "+list.size());
 	}
 }
